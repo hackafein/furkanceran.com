@@ -11,16 +11,13 @@ from os import environ
 import sys
 import urllib
 from flask import Flask, redirect, render_template, request, url_for,flash
-from flask_socketio import SocketIO, emit
+
 import json
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 import requests		
 from random import randint
 
-async_mode = None
-socketio = SocketIO(app, async_mode=async_mode)
-thread = None
 
 
 
@@ -69,8 +66,8 @@ if __name__ == '__main__':
     except ValueError:
         PORT = 80
     #Sinif().sinif()
-#    app.run(HOST, PORT)
-    socketio.run(app, debug=True)
+    app.run(HOST, PORT)
+    #socketio.run(app, debug=True)
 
 
 ##################################################################################################################
