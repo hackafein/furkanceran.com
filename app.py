@@ -10,11 +10,13 @@ import random
 from os import environ
 import sys
 import urllib
-from flask import Flask, redirect, render_template, request, url_for,flash
-
+from flask import Flask, redirect, render_template, request, url_for,flash, send_file, send_from_directory, safe_join, abort
+YUKLEME_KLASORU = 'static/yuklemeler'
+UZANTILAR = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 import json
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
+app.config['UPLOAD_FOLDER'] = YUKLEME_KLASORU
 import requests		
 from random import randint
 
@@ -55,17 +57,24 @@ def server_error(e):
 	return render_template('404.html'), 500
 
 
+@app.route("/return-file/")
+def return_file():
+    return send_file(YUKLEME_KLASORU+"/CV.pdf")
+
+
 
 
 
 
 if __name__ == '__main__':
     HOST = environ.get('0.0.0.0', 'localhost')
+
     try:
         PORT = int(environ.get('80', '5000'))
     except ValueError:
         PORT = 80
     #Sinif().sinif()
+    
     app.run(HOST, PORT)
     #socketio.run(app, debug=True)
 
