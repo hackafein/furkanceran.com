@@ -61,8 +61,9 @@ def server_error(e):
 def return_file():
     return send_file(YUKLEME_KLASORU+"/CV.pdf")
 
-
-
+@app.route("/sitemap.xml")
+def sitemap():
+        return render_template("/sitemap.xml")
 
 
 
