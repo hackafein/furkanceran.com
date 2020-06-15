@@ -65,7 +65,7 @@ def return_file():
 def sitemap():
         return render_template("/sitemap.xml")
 @app.route("/test")
-def sitemap():
+def test():
         return render_template("/fotogaleri.html")
 
 
