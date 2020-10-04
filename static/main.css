@@ -34,6 +34,7 @@
 /* ------------------------------------------------------------
 2. General Styles
 ------------------------------------------------------------ */
+
 html {
   margin: 0;
   width: 100%;
@@ -41,8 +42,8 @@ html {
   min-height: 100%;
   overflow: hidden;
 }
-
 body {
+  
   background-color: #444444;
   margin: 0;
   width: 100%;
@@ -1131,6 +1132,7 @@ textarea.form-control, textarea.form-control:focus {
 .clients.owl-carousel .owl-nav .owl-next:before {
     content: "\f054";
 }
+
 
 .testimonials.owl-carousel .owl-nav .owl-prev:hover,
 .testimonials.owl-carousel .owl-nav .owl-next:hover,
@@ -2908,3 +2910,4 @@ blockquote {
     font-size: 18px;
   }
 }
+
